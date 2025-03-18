@@ -1,0 +1,74 @@
+[
+    {
+        "city": "Paris",
+        "postal_code": "75000",
+        "region": "Île-de-France",
+        "latitude": "48.8566",
+        "longitude": "2.3522",
+        "state_abv": "IDF"
+    },
+    {
+        "city": "Lyon",
+        "postal_code": "69000",
+        "region": "Auvergne-Rhône-Alpes",
+        "latitude": "45.7640",
+        "longitude": "4.8357",
+        "state_abv": "ARA"
+    },
+    {
+        "city": "Marseille",
+        "postal_code": "13000",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "latitude": "43.2965",
+        "longitude": "5.3698",
+        "state_abv": "PACA"
+    },
+    {
+        "city": "Toulouse",
+        "postal_code": "31000",
+        "region": "Occitanie",
+        "latitude": "43.6047",
+        "longitude": "1.4442",
+        "state_abv": "OCC"
+    },
+    {
+        "city": "Bordeaux",
+        "postal_code": "33000",
+        "region": "Nouvelle-Aquitaine",
+        "latitude": "44.8378",
+        "longitude": "-0.5792",
+        "state_abv": "NAQ"
+    },
+    {
+        "city": "Mérignac",
+        "postal_code": "33700",
+        "region": "Nouvelle-Aquitaine",
+        "latitude": "44.8314",
+        "longitude": "-0.6417",
+        "state_abv": "NAQ"
+    },
+    {
+        "city": "Pessac",
+        "postal_code": "33600",
+        "region": "Nouvelle-Aquitaine",
+        "latitude": "44.8101",
+        "longitude": "-0.6413",
+        "state_abv": "NAQ"
+    },
+    {
+        "city": "Arcachon",
+        "postal_code": "33120",
+        "region": "Nouvelle-Aquitaine",
+        "latitude": "44.6570",
+        "longitude": "-1.1700",
+        "state_abv": "NAQ"
+    },
+    {
+        "city": "Libourne",
+        "postal_code": "33500",
+        "region": "Nouvelle-Aquitaine",
+        "latitude": "44.9154",
+        "longitude": "-0.2435",
+        "state_abv": "NAQ"
+    }
+]

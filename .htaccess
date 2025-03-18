@@ -1,0 +1,18 @@
+# Activer mod_rewrite
+Options +FollowSymLinks -Indexes
+RewriteEngine On
+
+# Définir la base du projet
+RewriteBase /dominator_maison/
+
+# Vérifier si la requête n'est ni un fichier ni un dossier
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Réécriture des URLs pour afficher les pages dynamiques
+RewriteRule ^music-video-([a-zA-Z0-9-]+)-([a-zA-Z0-9-]+)-online.html$ geoscript.php?state=$2&city=$1 [L,QSA]
+
+# Empêcher l'accès aux fichiers sensibles
+<FilesMatch "\.(htaccess|htpasswd|config\.php|db\.php)$">
+    Require all denied
+</FilesMatch>
