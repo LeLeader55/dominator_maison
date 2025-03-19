@@ -11,63 +11,90 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ressource/style.css" />
 
   
 </head>
 <body>
 
-
-<?php require_once __DIR__ . "/ressource/header.php"; ?>
-
-
-  <!-- SECTION 1 : HERO -->
-
-
-<?php require_once __DIR__ . "/ressource/hero.php"; ?>
+<?php
+require_once __DIR__ . "/ressource/header.php";
+require_once __DIR__ . "/ressource/hero.php"; 
+require_once __DIR__ . "/ressource/howItWorks.php";
 
 
 
-  <!-- SECTION 2 : HOW IT WORKS -->
-  <?php require_once __DIR__ . "/ressource/howItWorks.php"; ?>
+// ------------------------------------------------ AFFICHAGE TEXTE SEO ET SPIN --------------------------------------------------------//
+require_once  "ressource/texte.php";
+require_once  "ressource/texte2.php";
 
 
 
-<!-- NOUVELLE SECTION : TEXTE ADAPTÉ -->
-<?php require_once __DIR__ . "/ressource/texte.php"; ?>
-<!-- NOUVELLE SECTION : TEXTE ADAPTÉ -->
+$pageName = basename(__FILE__, ".php");
+$parts = explode('_', $pageName);
+
+
+$city = ucfirst($parts[0] ?? "Ville inconnue"); // Libourne
+$postal_code = $parts[1] ?? "00000"; // 33500
+$region = str_replace('-', ' ', $parts[2] ?? "Région inconnue"); // Nouvelle-Aquitaine
+
+// Numéro de téléphone par défaut ou spécifique par région (ex: base de données)
+$phone_number = "+33 6 22 90 60 82"; // À modifier selon la région si besoin
+
+// Générer le texte avec les paramètres
+$texteGenere = afficherTexteAdaptation($city, $postal_code, $phone_number,$region);
+$texteGenere2 = afficherTexteAdaptation2($city, $postal_code, $phone_number,$region);
+
+
+// Appliquer le spinning sur l'ensemble du texte
+$variantes = [$texteGenere, $texteGenere2];
+$texteFinal = $variantes[array_rand($variantes)];
+echo $texteFinal;
+
+
+// ------------------------------------------------ AFFICHAGE TEXTE SEO ET SPIN --------------------------------------------------------//
+
+
+
+
+
+
+
+?>
 
 
 
   <!-- S3 : CAROUSEL -->
-  <section class="carousel-realizations">
+  <?php
+// Dossier contenant les images
+$directory = "/../assets/images/";
+
+// Scanner le dossier pour récupérer les fichiers image
+$images = glob($directory . "*.{jpg,png,jpeg,gif}", GLOB_BRACE);
+
+// Vérifier si des images existent
+if (!$images) {
+    die("Aucune image trouvée dans le dossier $directory");
+}
+
+// Mélanger les images aléatoirement
+shuffle($images);
+
+// Prendre seulement 3 images pour le carousel
+$selectedImages = array_slice($images, 0, 3);
+?>
+
+<!-- CAROUSEL HTML -->
+<section class="carousel-realizations">
   <h2>Nuestras Realizaciones</h2>
   <div class="carousel-container">
     <div class="carousel-track">
 
-      <!-- Slide 1 -->
-      <div class="carousel-slide">
-        <img
-          src="https://ppf.fr/wp-content/uploads/isolation-des-combles-1.jpg"
-          alt="Realización 1"
-        />
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-slide">
-        <img
-          src="https://particulier.hellio.com/hubfs/Blog%20Particuliers%20-%20Images/isolation-grenier-combles-perdus-rouleaux-laine.jpeg"
-          alt="Realización 2"
-        />
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-slide">
-        <img
-          src="https://atriome.fr/uploads/realisations/isolation-des-combles-souffle-e-par-detuilage-a-chatou-78-atm-5.jpg"
-          alt="Realización 3"
-        />
-      </div>
+      <?php foreach ($selectedImages as $index => $image): ?>
+        <div class="carousel-slide">
+          <img src="<?php echo $image; ?>" alt="Realización <?php echo $index + 1; ?>">
+        </div>
+      <?php endforeach; ?>
 
     </div> <!-- /.carousel-track -->
 
