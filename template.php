@@ -11,24 +11,20 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="ressource/style.css" />
+  <link rel="stylesheet" href="ressource/css/style.css?v=2.1.6" />
 
   
 </head>
 <body>
 
 <?php
-require_once __DIR__ . "/ressource/header.php";
-require_once __DIR__ . "/ressource/hero.php"; 
-require_once __DIR__ . "/ressource/howItWorks.php";
 
-
-
-// ------------------------------------------------ AFFICHAGE TEXTE SEO ET SPIN --------------------------------------------------------//
-require_once  "ressource/texte.php";
-require_once  "ressource/texte2.php";
-
-
+function spinnerTexteVille($texte) {
+  return preg_replace_callback('/\{(.*?)\}/', function($matches) {
+      $options = explode('|', $matches[1]);
+      return $options[array_rand($options)];
+  }, $texte);
+}
 
 $pageName = basename(__FILE__, ".php");
 $parts = explode('_', $pageName);
@@ -41,6 +37,37 @@ $region = str_replace('-', ' ', $parts[2] ?? "Région inconnue"); // Nouvelle-Aq
 // Numéro de téléphone par défaut ou spécifique par région (ex: base de données)
 $phone_number = "+33 6 22 90 60 82"; // À modifier selon la région si besoin
 
+
+// -------------------------------------------------------------------- HEADER ---------------------------------------------------//
+require_once __DIR__ . "/ressource/php/header.php";
+
+?>
+
+<section class="page-title-section" aria-label="Título de la página">
+  <h1>AYUDAS 2025 - Aislamiento de áticos por 1 euro en <?= htmlspecialchars($city); ?> (<?= htmlspecialchars($postal_code); ?>)</h1>
+  <p>Programa de aislamiento térmico subvencionado en la región de <?= htmlspecialchars($region); ?>.</p>
+</section>
+
+
+
+<?php
+
+require_once  "ressource/php/hero.php";
+echo spinnerTexteHero($ville);
+
+
+require_once __DIR__ . "/ressource/php/howItWorks.php";
+
+
+
+// ------------------------------------------------ AFFICHAGE TEXTE SEO ET SPIN --------------------------------------------------------//
+require_once  "ressource/php/texte.php";
+require_once  "ressource/php/texte2.php";
+
+
+
+
+
 // Générer le texte avec les paramètres
 $texteGenere = afficherTexteAdaptation($city, $postal_code, $phone_number,$region);
 $texteGenere2 = afficherTexteAdaptation2($city, $postal_code, $phone_number,$region);
@@ -50,57 +77,85 @@ $texteGenere2 = afficherTexteAdaptation2($city, $postal_code, $phone_number,$reg
 $variantes = [$texteGenere, $texteGenere2];
 $texteFinal = $variantes[array_rand($variantes)];
 echo $texteFinal;
+?>
+
+<!-- ------------------------------------------------ AFFICHAGE TEXTE SEO ET SPIN -------------------------------------------------------->
 
 
-// ------------------------------------------------ AFFICHAGE TEXTE SEO ET SPIN --------------------------------------------------------//
 
 
+<!-- ------------------------------------------------ AFFICHAGE TEXTE REALISATION AVEC VILLE -------------------------------------------------------->
 
 
+<?php
+require_once  "ressource/php/texteville.php";
+
+$currentPage = basename(__FILE__, ".php");
+$parts = explode('_', $currentPage);
+$currentCitySlug = $parts[0];
+$currentRegionSlug = $parts[2] ?? '';
+
+// Charger le fichier JSON
+$jsonFile = __DIR__ . "/data/cities.json";
+$allCities = json_decode(file_get_contents($jsonFile), true);
+
+// Filtrage des villes de la région
+$relatedCities = array_filter($allCities, function ($city) use ($currentRegionSlug, $currentCitySlug) {
+  $regionSlug = strtolower(str_replace(' ', '-', $city['region']));
+  $citySlug = strtolower(str_replace(' ', '-', $city['city']));
+  return $regionSlug === $currentRegionSlug && $citySlug !== $currentCitySlug;
+});
+
+
+$texteGenere3 = afficherTexteVille($city, $postal_code, $phone_number, $region, $relatedCities);
+
+echo $texteGenere3;
 
 
 
 ?>
 
+<!-- ------------------------------------------------ AFFICHAGE TEXTE REALISATION AVEC VILLE -------------------------------------------------------->
 
 
-  <!-- S3 : CAROUSEL -->
-  <section class="carousel-realizations">
+
+
+
+
+<!-- S3 : CAROUSEL -------------------------------------------------------------------------------------------------------------------------------->
+<?php
+$directory = __DIR__ . '/ressource/images/carousel'; // chemin réel
+$webPath = 'ressource/images/carousel/'; // chemin visible depuis le navigateur
+
+// Récupérer toutes les images valides
+$images = glob($directory . '/*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
+
+// Mélanger les images
+shuffle($images);
+
+// En prendre seulement 3
+$images = array_slice($images, 0, 3);
+?>
+
+<section class="carousel-realizations">
   <h2>Nuestras Realizaciones</h2>
   <div class="carousel-container">
     <div class="carousel-track">
-
-      <!-- Slide 1 -->
-      <div class="carousel-slide">
-        <img
-          src="https://ppf.fr/wp-content/uploads/isolation-des-combles-1.jpg"
-          alt="Realización 1"
-        />
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-slide">
-        <img
-          src="https://particulier.hellio.com/hubfs/Blog%20Particuliers%20-%20Images/isolation-grenier-combles-perdus-rouleaux-laine.jpeg"
-          alt="Realización 2"
-        />
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-slide">
-        <img
-          src="https://atriome.fr/uploads/realisations/isolation-des-combles-souffle-e-par-detuilage-a-chatou-78-atm-5.jpg"
-          alt="Realización 3"
-        />
-      </div>
-
+      <?php foreach ($images as $index => $imagePath): ?>
+        <div class="carousel-slide">
+          <img 
+            src="<?= $webPath . basename($imagePath); ?>" 
+            alt="Réalisation <?= $index + 1 ?>" 
+          />
+        </div>
+      <?php endforeach; ?>
     </div> <!-- /.carousel-track -->
 
-    <!-- Boutons de navigation -->
     <button class="carousel-button prev">‹</button>
     <button class="carousel-button next">›</button>
   </div> <!-- /.carousel-container -->
 </section>
+
 
 <script>
   // 1) Sélection des éléments
@@ -157,89 +212,7 @@ echo $texteFinal;
 
 
 
-  <?php
-// ------------------------------------------------------------------ RECUP VILLE REGION ET ON AFFICHE ----------------------------------------------------
-
-
-$pageName = basename(__FILE__, ".php");
-// "libourne_33500_nouvelle-aquitaine"
-
-$parts = explode('_', $pageName);
-// [0] => libourne
-// [1] => 33500
-// [2] => nouvelle-aquitaine  (si tout se passe bien)
-
-$regionSlugPage = $parts[2] ?? ""; 
-// "nouvelle-aquitaine"
-
-$regionPage = str_replace('-', ' ', $regionSlugPage);
-// "nouvelle aquitaine"
-$regionPage = ucwords($regionPage);
-// "Nouvelle Aquitaine" (par exemple)
-
-// 2) Charger cities.json
-$jsonFile = __DIR__ . "/../data/cities.json";
-if (!file_exists($jsonFile)) {
-    die("Fichier cities.json introuvable !");
-}
-$allData = json_decode(file_get_contents($jsonFile), true);
-if (!$allData) {
-    die("Impossible de lire le JSON ou JSON invalide !");
-}
-
-// 3) Filtrer
-$regionSlugPage = strtolower($regionSlugPage);
-// ex: "nouvelle-aquitaine"
-$filtered = [];
-foreach ($allData as $row) {
-    $rowSlug = strtolower(str_replace(' ', '-', $row['region']));
-    if ($rowSlug === $regionSlugPage) {
-        $filtered[] = $row;
-    }
-}
-// 4) Affichage
-if (!empty($filtered)) {
-    echo "<h3 class='regionTitle'>Villes couvertes pour la région $regionPage</h3>";
-
-    // Conteneur des deux boutons
-    echo "<div class='regionButtons'>";
-    echo "  <button id='btnPlus' onclick='showCities()'>+ Afficher</button>";
-    echo "  <button id='btnMoins' onclick='hideCities()'>- Masquer</button>";
-    echo "</div>";
-
-    // Liste masquée au départ
-    echo "<div id='cityList'>";
-    echo "<ul>";
-    foreach ($filtered as $v) {
-        $citySlug  = strtolower(str_replace(' ', '-', $v['city']));
-        $cityLabel = $citySlug . "_" . $v['postal_code'] . "_" . $regionSlugPage;
-
-        // Lien cliquable
-        $cityUrl = $cityLabel . ".php";
-        echo "<li><a href='$cityUrl'>$cityLabel</a></li>";
-    }
-    echo "</ul>";
-    echo "</div>";
-} else {
-    echo "Aucune ville trouvée pour la région « $regionPage ».";
-}
-?>
-
-<script>
-function showCities() {
-  document.getElementById('cityList').style.display = 'block';
-}
-function hideCities() {
-  document.getElementById('cityList').style.display = 'none';
-}
-
-// ------------------------------------------------------------------ RECUP VILLE REGION ET ON AFFICHE ----------------------------------------------------
-
-</script>
-
-
-
-<?php require_once __DIR__ . "/ressource/footer.php"; ?>
+<?php require_once __DIR__ . "/ressource/php/footer.php"; ?>
 
 
 

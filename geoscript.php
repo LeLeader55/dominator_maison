@@ -38,7 +38,7 @@ foreach ($data as $location) {
     // Nom du fichier selon le format demandé: nomdelaville_codepostale_region.html
     $formatted_city = strtolower(str_replace(' ', '', $city));
     $formatted_region = strtolower(str_replace(' ', '', $region));
-    $file_name = "generated_pages/" . $formatted_city . "_" . $postal_code . "_" . $formatted_region . ".php";
+    $file_name = $formatted_city . "_" . $postal_code . "_" . $formatted_region . ".php";
 
     // Charger le template HTML et remplacer les valeurs
     $template = file_get_contents("template.php");

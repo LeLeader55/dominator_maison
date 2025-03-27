@@ -1,18 +1,19 @@
-# Activer mod_rewrite
+# =========================================================
+# Activer la réécriture d'URL
 Options +FollowSymLinks -Indexes
 RewriteEngine On
 
-# Définir la base du projet
+# Indiquer la base du projet
+# (à adapter si vous n’êtes pas exactement dans /dominator_maison/)
 RewriteBase /dominator_maison/
 
-# Vérifier si la requête n'est ni un fichier ni un dossier
+# Ignorer si la ressource demandée existe déjà (fichier ou dossier)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Réécriture des URLs pour afficher les pages dynamiques
-RewriteRule ^music-video-([a-zA-Z0-9-]+)-([a-zA-Z0-9-]+)-online.html$ geoscript.php?state=$2&city=$1 [L,QSA]
+# Vérifier si un .php du même nom existe dans generated_pages/
+RewriteCond %{DOCUMENT_ROOT}/dominator_maison/generated_pages/$1.php -f
 
-# Empêcher l'accès aux fichiers sensibles
-<FilesMatch "\.(htaccess|htpasswd|config\.php|db\.php)$">
-    Require all denied
-</FilesMatch>
+# Réécrire l’URL en pointant physiquement dans generated_pages/
+RewriteRule ^(.*)\.php$ generated_pages/$1.php [L,QSA]
+# =========================================================

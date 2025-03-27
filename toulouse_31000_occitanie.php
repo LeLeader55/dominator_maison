@@ -19,6 +19,13 @@
 
 <?php
 
+function spinnerTexteVille($texte) {
+  return preg_replace_callback('/\{(.*?)\}/', function($matches) {
+      $options = explode('|', $matches[1]);
+      return $options[array_rand($options)];
+  }, $texte);
+}
+
 $pageName = basename(__FILE__, ".php");
 $parts = explode('_', $pageName);
 
@@ -45,7 +52,10 @@ require_once __DIR__ . "/ressource/php/header.php";
 
 <?php
 
-require_once __DIR__ . "/ressource/php/hero.php"; 
+require_once  "ressource/php/hero.php";
+echo spinnerTexteHero($city);
+
+
 require_once __DIR__ . "/ressource/php/howItWorks.php";
 
 
