@@ -15,26 +15,34 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  padding-top: 130px; /* Ajuste selon la hauteur réelle du header */
+
+  
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 160px; /* ← ajuste selon la hauteur réelle du header mobile */
+  }
 }
 /************************************************
  *      HEADER
  ************************************************/
  /* Header global */
  header.site-header {
-  position: sticky;
+  position: fixed;
+  
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-  background: #004d40;
-}
-
- .site-header {
   background: linear-gradient(135deg, #004d40, #00695c);
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   background: #004d40;
   color: white;
   padding: 15px 20px;
+
+
   
 }
 .header-container {
@@ -121,6 +129,99 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+.burger-wrapper {
+  background-color: #004d40;
+  padding: 10px 20px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+}
+
+.burger-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.burger-icon {
+  font-size: 1.6rem;
+  margin-right: 8px;
+}
+
+.burger-label {
+  font-size: 1rem;
+  color: white;
+}
+
+
+/* === SLIDE MENU === */
+.burger-slide-menu {
+  position: fixed;
+
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #004d40;
+  z-index: 99999; /* très haut pour être au-dessus de tout */
+  transition: left 0.3s ease;
+  padding-top: 70px;
+}
+
+.burger-slide-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.burger-slide-menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.burger-slide-menu li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.burger-slide-menu li a:hover {
+  background-color: #00695c;
+}
+
+/* ACTIVE */
+.burger-slide-menu.open {
+  left: 0;
+}
+.burger-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
 
 
 /************************************************
@@ -526,13 +627,59 @@ body {
 
 
 
+
+
+/* === SECTION FAQ VILLE === */
+
+.faq-ville {
+  background-color: #e0f2f1;
+  padding: 30px 20px;
+  margin: 40px auto;
+  max-width: 1200px; /* au lieu de 1100px */
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.faq-ville h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #004d40;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.faq-list details {
+  background: white;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.faq-list summary {
+  font-weight: 600;
+  color: #00695c;
+  font-size: 1rem;
+}
+
+.faq-list p {
+  margin-top: 8px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+
+/* === SECTION FAQ VILLE === */
+
+
+
+
 /************************************************
  *           FOOTER
  ************************************************/
 
-/************************************************
- *            FOOTER GLOBAL
- ************************************************/
+
  .footer-dark {
 
   background: #004d40;

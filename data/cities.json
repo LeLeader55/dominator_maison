@@ -1,74 +1,402 @@
 [
     {
-        "city": "Paris",
-        "postal_code": "75000",
-        "region": "Île-de-France",
-        "latitude": "48.8566",
-        "longitude": "2.3522",
-        "state_abv": "IDF"
+        "city": "Sevilla",
+        "postal_code": "41001",
+        "region": "Andalucía",
+        "latitude": 37.658048,
+        "longitude": -4.915389,
+        "state_abv": "AND"
     },
     {
-        "city": "Lyon",
-        "postal_code": "69000",
-        "region": "Auvergne-Rhône-Alpes",
-        "latitude": "45.7640",
-        "longitude": "4.8357",
-        "state_abv": "ARA"
+        "city": "Málaga",
+        "postal_code": "29001",
+        "region": "Andalucía",
+        "latitude": 37.148129,
+        "longitude": -2.513515,
+        "state_abv": "AND"
     },
     {
-        "city": "Marseille",
-        "postal_code": "13000",
-        "region": "Provence-Alpes-Côte d'Azur",
-        "latitude": "43.2965",
-        "longitude": "5.3698",
-        "state_abv": "PACA"
+        "city": "Córdoba",
+        "postal_code": "14001",
+        "region": "Andalucía",
+        "latitude": 37.507295,
+        "longitude": -4.010937,
+        "state_abv": "AND"
     },
     {
-        "city": "Toulouse",
-        "postal_code": "31000",
-        "region": "Occitanie",
-        "latitude": "43.6047",
-        "longitude": "1.4442",
-        "state_abv": "OCC"
+        "city": "Granada",
+        "postal_code": "18001",
+        "region": "Andalucía",
+        "latitude": 37.08892,
+        "longitude": -3.401875,
+        "state_abv": "AND"
     },
     {
-        "city": "Bordeaux",
-        "postal_code": "33000",
-        "region": "Nouvelle-Aquitaine",
-        "latitude": "44.8378",
-        "longitude": "-0.5792",
-        "state_abv": "NAQ"
+        "city": "Jerez de la Frontera",
+        "postal_code": "11401",
+        "region": "Andalucía",
+        "latitude": 38.634183,
+        "longitude": -6.074683,
+        "state_abv": "AND"
     },
     {
-        "city": "Mérignac",
-        "postal_code": "33700",
-        "region": "Nouvelle-Aquitaine",
-        "latitude": "44.8314",
-        "longitude": "-0.6417",
-        "state_abv": "NAQ"
+        "city": "Almería",
+        "postal_code": "04001",
+        "region": "Andalucía",
+        "latitude": 38.402778,
+        "longitude": -3.548398,
+        "state_abv": "AND"
     },
     {
-        "city": "Pessac",
-        "postal_code": "33600",
-        "region": "Nouvelle-Aquitaine",
-        "latitude": "44.8101",
-        "longitude": "-0.6413",
-        "state_abv": "NAQ"
+        "city": "Huelva",
+        "postal_code": "21001",
+        "region": "Andalucía",
+        "latitude": 37.376252,
+        "longitude": -4.972973,
+        "state_abv": "AND"
     },
     {
-        "city": "Arcachon",
-        "postal_code": "33120",
-        "region": "Nouvelle-Aquitaine",
-        "latitude": "44.6570",
-        "longitude": "-1.1700",
-        "state_abv": "NAQ"
+        "city": "Marbella",
+        "postal_code": "29600",
+        "region": "Andalucía",
+        "latitude": 36.912176,
+        "longitude": -4.825822,
+        "state_abv": "AND"
     },
     {
-        "city": "Libourne",
-        "postal_code": "33500",
-        "region": "Nouvelle-Aquitaine",
-        "latitude": "44.9154",
-        "longitude": "-0.2435",
-        "state_abv": "NAQ"
+        "city": "Dos Hermanas",
+        "postal_code": "41701",
+        "region": "Andalucía",
+        "latitude": 36.937562,
+        "longitude": -4.572591,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Jaén",
+        "postal_code": "23001",
+        "region": "Andalucía",
+        "latitude": 37.597716,
+        "longitude": -4.48541,
+        "state_abv": "AND"
+    },
+    {
+        "city": "El Puerto de Santa María",
+        "postal_code": "11500",
+        "region": "Andalucía",
+        "latitude": 38.39623,
+        "longitude": -5.016021,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Chiclana de la Frontera",
+        "postal_code": "11130",
+        "region": "Andalucía",
+        "latitude": 38.572163,
+        "longitude": -2.132064,
+        "state_abv": "AND"
+    },
+    {
+        "city": "San Fernando",
+        "postal_code": "11100",
+        "region": "Andalucía",
+        "latitude": 38.131151,
+        "longitude": -2.930294,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Roquetas de Mar",
+        "postal_code": "04740",
+        "region": "Andalucía",
+        "latitude": 38.333549,
+        "longitude": -6.36555,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Motril",
+        "postal_code": "18600",
+        "region": "Andalucía",
+        "latitude": 37.03458,
+        "longitude": -4.431544,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Estepona",
+        "postal_code": "29680",
+        "region": "Andalucía",
+        "latitude": 37.019145,
+        "longitude": -5.294924,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Fuengirola",
+        "postal_code": "29640",
+        "region": "Andalucía",
+        "latitude": 38.500754,
+        "longitude": -4.55463,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Torremolinos",
+        "postal_code": "29620",
+        "region": "Andalucía",
+        "latitude": 36.77267,
+        "longitude": -4.324852,
+        "state_abv": "AND"
+    },
+    {
+        "city": "La Línea de la Concepción",
+        "postal_code": "11300",
+        "region": "Andalucía",
+        "latitude": 38.002772,
+        "longitude": -4.728071,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Utrera",
+        "postal_code": "41710",
+        "region": "Andalucía",
+        "latitude": 37.084336,
+        "longitude": -3.909849,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Benalmádena",
+        "postal_code": "29630",
+        "region": "Andalucía",
+        "latitude": 38.639849,
+        "longitude": -3.18511,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Algeciras",
+        "postal_code": "11200",
+        "region": "Andalucía",
+        "latitude": 37.628375,
+        "longitude": -6.22738,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Vélez-Málaga",
+        "postal_code": "29700",
+        "region": "Andalucía",
+        "latitude": 37.942482,
+        "longitude": -4.380963,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Linares",
+        "postal_code": "23700",
+        "region": "Andalucía",
+        "latitude": 36.898316,
+        "longitude": -4.720768,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Antequera",
+        "postal_code": "29200",
+        "region": "Andalucía",
+        "latitude": 37.744876,
+        "longitude": -2.67176,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Lucena",
+        "postal_code": "14900",
+        "region": "Andalucía",
+        "latitude": 36.569501,
+        "longitude": -2.616078,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Écija",
+        "postal_code": "41400",
+        "region": "Andalucía",
+        "latitude": 36.739865,
+        "longitude": -3.419778,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Sanlúcar de Barrameda",
+        "postal_code": "11540",
+        "region": "Andalucía",
+        "latitude": 38.504216,
+        "longitude": -5.514693,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Ronda",
+        "postal_code": "29400",
+        "region": "Andalucía",
+        "latitude": 36.996341,
+        "longitude": -3.443333,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Adra",
+        "postal_code": "04770",
+        "region": "Andalucía",
+        "latitude": 37.180748,
+        "longitude": -4.838414,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Arcos de la Frontera",
+        "postal_code": "11630",
+        "region": "Andalucía",
+        "latitude": 36.807702,
+        "longitude": -2.200869,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Andújar",
+        "postal_code": "23740",
+        "region": "Andalucía",
+        "latitude": 36.582509,
+        "longitude": -3.620069,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Puente Genil",
+        "postal_code": "14500",
+        "region": "Andalucía",
+        "latitude": 38.459969,
+        "longitude": -4.132801,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Lebrija",
+        "postal_code": "41740",
+        "region": "Andalucía",
+        "latitude": 36.900131,
+        "longitude": -5.018497,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Coria del Río",
+        "postal_code": "41100",
+        "region": "Andalucía",
+        "latitude": 38.461391,
+        "longitude": -6.26321,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Cártama",
+        "postal_code": "29570",
+        "region": "Andalucía",
+        "latitude": 38.324642,
+        "longitude": -5.145865,
+        "state_abv": "AND"
+    },
+    {
+        "city": "La Rinconada",
+        "postal_code": "41309",
+        "region": "Andalucía",
+        "latitude": 37.959037,
+        "longitude": -3.179891,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Los Barrios",
+        "postal_code": "11370",
+        "region": "Andalucía",
+        "latitude": 38.543827,
+        "longitude": -3.138193,
+        "state_abv": "AND"
+    },
+    {
+        "city": "San Roque",
+        "postal_code": "11360",
+        "region": "Andalucía",
+        "latitude": 37.246511,
+        "longitude": -3.167588,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Cabra",
+        "postal_code": "14940",
+        "region": "Andalucía",
+        "latitude": 37.202325,
+        "longitude": -3.389662,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Campillos",
+        "postal_code": "29320",
+        "region": "Andalucía",
+        "latitude": 37.060771,
+        "longitude": -4.590524,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Baza",
+        "postal_code": "18800",
+        "region": "Andalucía",
+        "latitude": 38.379976,
+        "longitude": -4.248836,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Morón de la Frontera",
+        "postal_code": "41530",
+        "region": "Andalucía",
+        "latitude": 37.901749,
+        "longitude": -6.377353,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Guadix",
+        "postal_code": "18500",
+        "region": "Andalucía",
+        "latitude": 37.299408,
+        "longitude": -3.316023,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Pilas",
+        "postal_code": "41840",
+        "region": "Andalucía",
+        "latitude": 36.506294,
+        "longitude": -3.898355,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Torre del Mar",
+        "postal_code": "29740",
+        "region": "Andalucía",
+        "latitude": 37.830038,
+        "longitude": -5.734891,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Montilla",
+        "postal_code": "14550",
+        "region": "Andalucía",
+        "latitude": 37.660911,
+        "longitude": -5.790328,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Alhaurín de la Torre",
+        "postal_code": "29130",
+        "region": "Andalucía",
+        "latitude": 37.078809,
+        "longitude": -5.194984,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Almuñécar",
+        "postal_code": "18690",
+        "region": "Andalucía",
+        "latitude": 36.879924,
+        "longitude": -4.607239,
+        "state_abv": "AND"
+    },
+    {
+        "city": "Jódar",
+        "postal_code": "23500",
+        "region": "Andalucía",
+        "latitude": 36.945469,
+        "longitude": -4.010097,
+        "state_abv": "AND"
     }
 ]

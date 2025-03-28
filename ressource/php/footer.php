@@ -33,4 +33,21 @@
     <p>© 2025 Programa de Renovación Energética</p>
     <p>Hecho con ❤️ para un futuro sostenible</p>
   </div>
+
+
+  <script>
+  const btn = document.getElementById('openBurgerMenu');
+  const menu = document.getElementById('burgerSlideMenu');
+
+  btn.addEventListener('click', function () {
+    menu.classList.toggle('open');
+  });
+
+  // Ferme le menu si on clique en dehors
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
 </footer>
